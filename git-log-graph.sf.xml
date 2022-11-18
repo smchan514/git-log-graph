@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Enable reference to environment variables -->
+    <context:property-placeholder />
+    <!-- Enable verification of source code annotations at init (@Required) -->
+    <context:annotation-config />
+
+    <bean class="git_log_graph.ConvertGitLog2Graph">
+    <!-- 
+        <property name="infile" value="git-log-format-raw.log" />
+     -->
+        <property name="infile" value="${PATH_GIT_LOG}" />
+        <property name="parser">
+            <bean class="git_log_graph.git_log.GitLogParser" />
+        </property>
+        <property name="generator">
+            <bean class="git_log_graph.gml.GmlGenerator" />
+        </property>
+    </bean>
+</beans>
