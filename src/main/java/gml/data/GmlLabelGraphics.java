@@ -2,31 +2,31 @@ package gml.data;
 
 public class GmlLabelGraphics {
 
-	private String _text;
-	private String _alignment;
+    private String _text;
+    private String _alignment;
     private Integer _fontSize;
     private String _fontStyle;
     private String _fontName;
 
-	public GmlLabelGraphics() {
-		// ...
-	}
+    public GmlLabelGraphics() {
+        // ...
+    }
 
-	public String getText() {
-		return _text;
-	}
+    public String getText() {
+        return _text;
+    }
 
-	public void setText(String text) {
-		_text = text;
-	}
+    public void setText(String text) {
+        _text = text;
+    }
 
-	public String getAlignment() {
-		return _alignment;
-	}
+    public String getAlignment() {
+        return _alignment;
+    }
 
-	public void setAlignment(String alignment) {
-		_alignment = alignment;
-	}
+    public void setAlignment(String alignment) {
+        _alignment = alignment;
+    }
 
     public Integer getFontSize() {
         return _fontSize;
