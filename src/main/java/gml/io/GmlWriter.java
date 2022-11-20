@@ -62,8 +62,25 @@ public class GmlWriter {
 			GmlLabelGraphics lg = node.getLabelGraphics();
 			if (lg != null) {
 				appendLine(bw, "LabelGraphics [");
-				appendLine(bw, "  text \"" + escapeGmlString(lg.getText()) + "\"");
-				appendLine(bw, "  alignment \"" + lg.getAlignment() + "\"");
+                if (lg.getText() != null) {
+                    appendLine(bw, "  text \"" + escapeGmlString(lg.getText()) + "\"");
+                }
+
+                if (lg.getAlignment() != null) {
+                    appendLine(bw, "  alignment \"" + lg.getAlignment() + "\"");
+                }
+
+                if (lg.getFontSize() != null) {
+                    appendLine(bw, "  fontSize " + lg.getFontSize());
+                }
+
+                if (lg.getFontStyle() != null) {
+                    appendLine(bw, "  fontStyle \"" + lg.getFontStyle() + "\"");
+                }
+
+                if (lg.getFontName() != null) {
+                    appendLine(bw, "  fontName \"" + lg.getFontName() + "\"");
+                }
 				appendLine(bw, "]");
 			}
 

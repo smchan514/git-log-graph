@@ -11,7 +11,6 @@ import gml.data.GmlGraph;
 import gml.data.GmlLabelGraphics;
 import gml.data.GmlNode;
 import gml.data.GmlNodeGraphics;
-import gml.data.GmlNodeGraphicsTypes;
 import gml.io.GmlWriter;
 
 public class GmlGenerator implements IGraphGenerator {
@@ -64,7 +63,7 @@ public class GmlGenerator implements IGraphGenerator {
 			if (commit.getMessage().startsWith("Merged PR")) {
 				GmlNodeGraphics gr = node.createNodeGraphics();
 				gr.setFillColor("#FF0000");
-				gr.setType(GmlNodeGraphicsTypes.TRAPEZOID2);
+                gr.setType(GmlNodeGraphics.TYPE_TRAPEZOID2);
 			}
 		}
 
